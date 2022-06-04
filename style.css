@@ -62,15 +62,67 @@ strong {
     top: 0;
     left: 0;
     z-index: 1;
+    padding: 0px 16px 0px 20px;
+    display: flex;
+    justify-content: center;
 }
-
-
+.top-bar > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.desktop-bar {
+    width: 935px;
+}
+.desktop-bar :nth-child(n) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.desktop-bar > :nth-child(1) {
+    width: 146px;
+}
+.desktop-bar > :nth-child(3) {
+    width: 128px;
+}
+.vert-division {
+    width: 1px;
+    height: 22px;
+    background-color: #DBDBDB;
+}
+.top-bar ion-icon {
+    width: 22px;
+    height: 22px;
+}
+.top-bar input {
+    width: 215px;
+    height: 28px;
+    margin: 13px 0px;
+    border-radius: 3px;
+    border: 1px solid #DBDBDB;
+    font-size: 12px;
+    text-align: center;
+    color: #979797;
+    font-weight: 400;
+}
+.top-bar img {
+    margin-top: 2.5px;
+    width: 103px;
+    height: 29px;
+}
+.mobile-bar,
+.mobile-bar ion-icon,
+.mobile-bar img {
+    display: none;
+}
 
 /* pagina de conteudo page = (feeds + sidebar) */
 .page {
     width: 935px;
     margin: 88px auto 0px auto;
-    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
 }
 
 /* feed vertical feeds = (stories-feed + posts-feed) */
@@ -80,6 +132,8 @@ strong {
     flex-direction: column;
     align-items: center;
 }
+
+
 
 /* area de stories */
 .stories-feed {
@@ -94,6 +148,17 @@ strong {
     overflow-x: hidden;
     padding-left: 18px;
     margin-bottom: 24px;
+    position: relative;
+}
+.stories-feed ion-icon {
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.25));
+    color: #FFFFFF;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 46px;
+    right: 6px;
+    z-index: 2;
 }
 .stories-feed div {
     width: 66px;
@@ -220,11 +285,11 @@ strong {
     left: 86px;
 }
 .save-icon {
-    width: 12.4px;
-    height: 17.9px;
+    width: 22px;
+    height: 22px;
     position: absolute;
     bottom: 44px;
-    right: 18px;
+    right: 15px;
 }
 
 
@@ -234,9 +299,6 @@ strong {
     background-color: #FAFAFA;
     border: 0px solid #FAFAFA;
     width: 293px;
-    position: absolute;
-    top: 0px;
-    right: 0px;
 }
 
 /* area do perfil do usuario */
@@ -317,16 +379,13 @@ strong {
 
 
 /* formatacoes da bottom bar */
-.bottom-bar {
+.bottom-bar,
+.bottom-bar ion-icon {
     display: none;
-    background-color: #FAFAFA;
-    width: 100%;
-    height: 54px;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
 }
+
+
+
 /* media query */
 @media (max-width: 935px) {
     .sidebar {
@@ -336,24 +395,70 @@ strong {
         width: 614px;
     }
 }
-/*
+
 @media (max-width: 614px) {
-    .feeds {
-        width: 100%;
-    }
+    .post-pic,
+    .feeds,
+    .posts-feed,
     .stories-feed {
-        width: 100%;
-        background-color: #FAFAFA;
+        min-width: 100vw
     }
     .page {
-        width: 100%;
-        margin: 54x auto 54px auto;
+        margin-top: 54px;
     }
-    .post-pic {
-        width: 100%;
-        height: 100vw;
+
+    .stories-feed {
+        height: 121px;
+        background-color: #FAFAFA;
     }
-    .bottom-bar {
+    .stories-feed ion-icon {
+        display: none;
+    }
+
+    .desktop-bar,
+    .desktop-bar ion-icon,
+    .desktop-bar img,
+    .desktop-bar input,
+    .desktop-bar :nth-child(n) {
+        display: none;
+        width: 0px;
+    }
+    .mobile-bar,
+    .mobile-bar ion-icon,
+    .mobile-bar img {
         display: initial;
     }
-} */
+    .mobile-bar {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .bottom-bar {
+        display: initial;
+        background-color: #FAFAFA;
+        width: 100%;
+        height: 54px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        padding: 0px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .bottom-bar ion-icon {
+        display: initial;
+        width: 22px;
+        height: 22px;
+        z-index: 2;
+    }
+}
+
+
+
+/* hover dos clicáveis */
+:hover img, ion-icon, h2, .stories-feed h3, h4, h5 {
+    cursor: pointer;
+}
