@@ -410,6 +410,7 @@ strong {
     .stories-feed {
         height: 121px;
         background-color: #FAFAFA;
+        margin-bottom: 0px;
     }
     .stories-feed ion-icon {
         display: none;
