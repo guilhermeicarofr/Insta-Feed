@@ -62,7 +62,7 @@ strong {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 2;
+    z-index: 3;
     padding: 0px 16px 0px 20px;
     display: flex;
     justify-content: center;
@@ -121,7 +121,8 @@ strong {
 .page {
     width: 935px;
     margin: 88px auto 0px auto;
-    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 /* feed vertical feeds */
@@ -283,14 +284,16 @@ strong {
 
 
 /* formatacoes na sidebar */
+.sidebar-column {
+    position: relative;
+    width: 293px;
+    height: auto;
+}
 .sidebar {
     background-color: #FAFAFA;
     border: 0px solid #FAFAFA;
     width: 293px;
-    height: 100%;
-    position: absolute;
-    top: 0px;
-    right: 0px;
+    position: fixed;
     margin-left: 29px;
 }
 
